@@ -2,20 +2,31 @@
 
 .visible 
 {
-visibility = visible;
+visibility : visible;
 }
 
 .hidden
 {
-visibility = hidden;
+visibility : hidden;
 }
 
-table
+table, th, td
 {
-border: 100px black;
+text-align: center;
+margin-left:auto;
+margin-right:auto;
+padding:5px;
 }
 
-body {background-color: lightblue;}
+td 
+{
+background-color:lightyellow;
+}
+
+body 
+{
+background-color: lightblue;
+}
 
 #theWorld
 {
@@ -51,6 +62,11 @@ float:right;
 
 #controls 
 {
-background-color:black;
+background-color: #c5d8d1;
 padding:50px;
+}
+
+#result 
+{
+text-align:center;
 }

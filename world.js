@@ -6,7 +6,7 @@ let theButton = document.getElementById("lookup");
 theButton.onclick = function() 
 {
 let Entry = document.getElementById("country").value;
-let MainIndex = `http://localhost/Web-Dev/Assignment%205/comp2245-assignment5/world.php?country=${Entry}`;
+let MainIndex = `http://localhost/comp2245-assignment5/world.php?country=${Entry}`;
 
 fetch(MainIndex)
 .then(response => response.text())
@@ -30,7 +30,7 @@ theButton2.onclick = function()
   event.preventDefault();
 
 let Entry2 = document.getElementById("country").value;
-let MainIndex2 = `http://localhost/Web-Dev/Assignment%205/comp2245-assignment5/world.php?country=${Entry2}&city=cities`;
+let MainIndex2 = `http://localhost/comp2245-assignment5/world.php?country=${Entry2}&city=cities`;
 
 fetch(MainIndex2)
 .then(response => response.text())

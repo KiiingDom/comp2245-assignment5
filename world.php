@@ -25,10 +25,10 @@ echo "No country entered, displaying all countries.";
 }
 elseif (!(empty($countryQuery)))
 {
-echo "Results from: <b>" .$countryQuery . ".</b> <br>";
+echo "Results from: <b>" .$countryQuery . "</b> <br>";
 }
 
-echo "<table style = 'border :100px'>
+echo "<table>
 <tr> 
 <th>Country Name</th> <th>Continent</th> <th>Year of Independence</th> <th>Head of State</th>
 </tr>";
@@ -54,15 +54,15 @@ $results2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
 if (empty($countryQuery)) 
 {
-echo "No country entered, displaying all countries.";
+echo "No country entered. Cannot identify city/cities.";
 }
-elseif (!(empty($cityQuery)))
+elseif (!(empty($cityQuery))) // Note to self $countryQuery might be applicable or even better here
 {
 echo "Results from: <b>" .$countryQuery . ".</b> <br>";
 
 echo 
-"<table style = 'border : 100px blue;'>
-<tr style ='text-align: middle; vertical-align: middle;'>
+"<table>
+<tr style>
 <th>City Name</th> <th>District</th> <th>Population</th>
 </tr>";
 

@@ -1,24 +1,49 @@
-window.addEventListener('DOMContentLoaded', (event)=>{
+window.addEventListener('DOMContentLoaded', function(){
+  event.preventDefault();
 
 
 let theButton = document.getElementById("lookup");
-let Entry = document.getElementById("country");
-let MainIndex = "http://localhost/Web-Dev/Assignment%205/comp2245-assignment5/world.php?country=";
-theButton.onclick = function() {whatCountry()}
-
-
-
-function whatCountry() 
+theButton.onclick = function() 
 {
+let Entry = document.getElementById("country").value;
+let MainIndex = `http://localhost/Web-Dev/Assignment%205/comp2245-assignment5/world.php?country=${Entry}`;
 
-
-fetch(MainIndex+Entry.value)
+fetch(MainIndex)
 .then(response => response.text())
 .then(data =>{
 document.getElementById("result").className ="visible";
 let theResult = document.getElementById("result");
 theResult.innerHTML = data;
 })
+.catch(error => 
+{
+})
+
 
 };
+
+
+
+let theButton2 = document.getElementById("cityLookup");
+theButton2.onclick = function() 
+{
+  event.preventDefault();
+
+let Entry2 = document.getElementById("country").value;
+let MainIndex2 = `http://localhost/Web-Dev/Assignment%205/comp2245-assignment5/world.php?country=${Entry2}&city=cities`;
+
+fetch(MainIndex2)
+.then(response => response.text())
+.then(data =>{
+document.getElementById("result").className ="visible";
+let theResult2 = document.getElementById("result");
+theResult2.innerHTML = data;
+})
+.catch(error => 
+{
+})
+
+};
+
+
 });
